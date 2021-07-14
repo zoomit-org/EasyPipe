@@ -155,8 +155,8 @@ Inject your pipeline to your desired class and run it
             _pipeline = pipeline;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Register(QueryArticle query)
+        [HttpGet]
+        public async Task<IActionResult> Get(QueryArticle query)
         {
             var result = await _pipeline.RunAsync(query);
 
