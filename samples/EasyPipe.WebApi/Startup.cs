@@ -1,17 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using EasyPipe.WebApi.Pipeline;
 using EasyPipe.Extensions.MicrosoftDependencyInjection;
+using EasyPipe.WebApi.PipelineWithoutRequest;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace EasyPipe.WebApi
@@ -39,6 +33,11 @@ namespace EasyPipe.WebApi
                     .WithMiddleware<Middleware1>()
                     .WithMiddleware<Middleware2>()
                     .WithMiddleware<Middleware3>();
+            
+            services.AddPipeline<PipelineResponse2>()
+                    .WithMiddleware<Middleware4>()
+                    .WithMiddleware<Middleware5>()
+                    .WithMiddleware<Middleware6>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

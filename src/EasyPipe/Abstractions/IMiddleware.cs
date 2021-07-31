@@ -6,8 +6,15 @@ namespace EasyPipe
 {
     public interface IMiddleware<in TRequest, TResponse>
     {
-        Task<TResponse> RunAsync(TRequest request, 
-                                 IPipelineContext context, 
+        Task<TResponse> RunAsync(TRequest request,
+                                 IPipelineContext context,
+                                 Func<Task<TResponse>> next,
+                                 CancellationToken cancellationToken);
+    }
+
+    public interface IMiddleware<TResponse>
+    {
+        Task<TResponse> RunAsync(IPipelineContext context,
                                  Func<Task<TResponse>> next,
                                  CancellationToken cancellationToken);
     }

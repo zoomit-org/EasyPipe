@@ -1,7 +1,6 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using EasyPipe;
 
 namespace EasyPipe.WebApi.Pipeline
 {
