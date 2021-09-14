@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="..\..\assets\logo\logo.png" Pack="true" PackagePath=""/>
+        <None Include="..\..\assets\logo\logo.png" Pack="true" PackagePath="" />
     </ItemGroup>
 
 </Project>

@@ -8,9 +8,4 @@ namespace EasyPipe
         Task<TResponse> RunAsync(TRequest request,
                                  CancellationToken cancellationToken = default);
     }
-    
-    public interface IPipeline<TResponse>
-    {
-        Task<TResponse> RunAsync(CancellationToken cancellationToken = default);
-    }
 }
